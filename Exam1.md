@@ -38,3 +38,30 @@ In Gaussian Mixture Model (GMM) for image thresholding, a common choice for the 
      - Projective Transform (Homography): Represented in homogeneous coordinates, allowing for the representation and transformation of points at infinity.
 
    These fundamental differences illustrate how affine and projective transforms relate to geometric properties and the representation of space in image processing and computer vision tasks.
+
+
+   6. **Principal Point and K Matrix**:
+    The principal point coordinates (\(c_x, c_y\)) in the camera calibration matrix \(K\) typically correspond to the image center. If the captured image size is \( (I_x, I_y) \), then usually \(c_x = I_x/2\) and \(c_y = I_y/2\). In matrix form, \(K\) would look like:
+
+\[
+K = \begin{pmatrix}
+f_x & s & c_x \\
+0 & f_y & c_y \\
+0 & 0 & 1
+\end{pmatrix}
+\]
+
+7. **Gaussian Filters Before Edge Detection**:
+    Applying Gaussian filters before edge and corner detection helps in reducing noise and smoothing out the image. This makes the subsequent edge/corner detection more reliable, as it reduces the likelihood of detecting false positives caused by noise or minor texture variations.
+
+8. **Vanishing Points in Orthographic Projections**:
+    Vanishing points do not exist in orthographic projections as parallel lines remain parallel and do not converge. In Perspective Projection, vanishing points exist as parallel lines appear to converge at a point in the distance due to perspective effects.
+
+9. **Choice in SIFT Before Subsampling**:
+    (b) Image Blurring is chosen before subsampling in Scale-Invariant Feature Transform (SIFT) to reduce noise and to ensure that features are scale invariant.
+
+10. **Field of View with Different Sensor Sizes**:
+     The larger sensor (35 mm × 35 mm) will provide a larger field of view compared to the smaller sensor (24 mm × 24 mm), given the same focal length lens is used on both.
+
+11. **Brightness Conservation in Optical Flow Computation**:
+     True. The brightness constancy assumption is a fundamental premise in optical flow computation. It assumes that the brightness (intensity) of a particular pixel remains consistent between consecutive frames, which aids in determining the motion of that pixel over time.
