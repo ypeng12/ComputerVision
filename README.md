@@ -60,7 +60,40 @@ Our algorithm successfully segments the soccer ball and estimates its distance a
 This project serves as a stepping stone towards developing sophisticated vision systems for autonomous robots, pushing the boundaries of what they can perceive and act upon in their environment.
 
 ---
+# CMSC426 Project 2: Panorama Stitching
 
+## Overview
+The objective of Project 2 is to develop a complete panorama stitching pipeline similar to the panorama feature found in smartphones. This pipeline involves several computer vision techniques, from corner detection to image warping and blending.
+
+## Pipeline Steps
+
+### 1. Corner Detection and ANMS
+- **Corner Detection**: Utilize `cv2.cornerHarris` or `cv2.goodFeaturesToTrack` to detect corners in images.
+- **Adaptive Non-Maximal Suppression (ANMS)**: Ensures an even distribution of corners across the image to prevent warping artifacts.
+
+### 2. Feature Descriptors
+- Create descriptors for feature points by taking a 40×40 patch around each keypoint, applying Gaussian blur, subsampling to 8×8, and standardizing to zero mean and unit variance.
+
+### 3. Feature Matching
+- Match feature points between two images by computing the sum of square differences and applying a ratio test to select confident correspondences.
+
+### 4. RANSAC for Homography Estimation
+- Use the RANSAC algorithm to reject outliers and estimate a robust homography matrix between matched feature points.
+
+### 5. Image Warping and Blending
+- Warp images using the computed homography and blend them together, addressing inconsistencies due to exposure or photometric distortions.
+
+### 6. Full Pipeline Execution
+- Stitch multiple images together to form a panorama by iteratively applying the previous steps.
+
+## Implementation Details
+
+- The implementation leverages OpenCV functions for most steps, with custom functions for ANMS, feature matching, and RANSAC.
+- A mean value blending technique is used to smooth out the transitions between stitched images.
+
+## Results
+
+- The pipeline successfully creates panoramas from multiple sets of images, handling various challenges such as feature detection in low-texture areas and robustness to outlier correspondences.
 
 
 *For detailed code, results, and figures, please refer to the respective Jupyter Notebook files in this repository.*
