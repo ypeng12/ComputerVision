@@ -1,4 +1,4 @@
-# CMSC426
+# Computer Vision
 
 # Homework 1 - Line Fitting with Outlier Rejection Techniques
 
@@ -29,7 +29,7 @@ The homework provided a practical understanding of line fitting in the presence 
 
 ---
 
-# CMSC426 Project 1: Color Segmentation using GMM
+#  Project 1: Color Segmentation using GMM
 
 ## Introduction
 
@@ -60,7 +60,7 @@ Our algorithm successfully segments the soccer ball and estimates its distance a
 This project serves as a stepping stone towards developing sophisticated vision systems for autonomous robots, pushing the boundaries of what they can perceive and act upon in their environment.
 
 ---
-# CMSC426 Project 2: Panorama Stitching
+#  Project 2: Panorama Stitching
 
 ## Overview
 The objective of Project 2 is to develop a complete panorama stitching pipeline similar to the panorama feature found in smartphones. This pipeline involves several computer vision techniques, from corner detection to image warping and blending.
